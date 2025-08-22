@@ -5,16 +5,10 @@
     <meta charset="UTF-8">
     <title>Lista de Livros - BibliotekCrud</title>
     <link rel="stylesheet" href="{% static 'lista.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
 </head>
 <body>
-    <header>
-        <h1>📚 BibliotekCrud</h1>
-        <nav>
-            <a href="{% url 'home' %}">Home</a> | 
-            <a href="{% url 'form_livro' %}">Adicionar Livro</a> | 
-            <a href="{% url 'lista_emprestimos' %}">Empréstimos</a>
-        </nav>
-    </header>
+    {% include 'components/navbar.html' %}
 
     <main class="container">
         <h2>📖 Livros Disponíveis</h2>
@@ -33,11 +27,11 @@
             <tbody>
                 {% for livro in livros %}
                 <tr>
-                    <td>{{ livro.titulo }}</td>
-                    <td>{{ livro.autor }}</td>
-                    <td>{{ livro.genero }}</td>
-                    <td>{{ livro.quantidade }}</td>
-                    <td>
+                    <td data-label="Título">{{ livro.titulo }}</td>
+                    <td data-label="Autor">{{ livro.autor }}</td>
+                    <td data-label="Gênero">{{ livro.genero }}</td>
+                    <td data-label="Quantidade">{{ livro.quantidade }}</td>
+                    <td data-label="Ações">
                         <a href="{% url 'editar_livro' livro.id %}">Editar</a> | 
                         <a href="{% url 'deletar_livro' livro.id %}">Deletar</a>
                     </td>
