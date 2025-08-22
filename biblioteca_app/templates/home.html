@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BibliotekCrud</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <header>
+        <h1>📚 BibliotekCrud</h1>
+        <nav>
+            <a href="{% url 'lista_livros' %}">Livros</a> | 
+            <a href="{% url 'lista_emprestimos' %}">Empréstimos</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Bem-vindo à Biblioteca!</h2>
+            <p>Aqui você pode gerenciar livros e empréstimos de forma simples e rápida.</p>
+            <a href="{% url 'lista_livros' %}" class="button">Ver Livros</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h3>Nossos Recursos</h3>
+            <div class="feature-cards">
+                <div class="card">
+                    <h4>📖 Catálogo de Livros</h4>
+                    <p>Consulte todos os livros disponíveis com detalhes de autor, gênero e quantidade.</p>
+                </div>
+                <div class="card">
+                    <h4>📝 Gerenciamento de Empréstimos</h4>
+                    <p>Registre empréstimos e devoluções de forma rápida e organizada.</p>
+                </div>
+                <div class="card">
+                    <h4>🔍 Pesquisa Inteligente</h4>
+                    <p>Encontre livros pelo título, autor ou gênero com facilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h3>Sobre a Biblioteca</h3>
+            <p>A Biblioteca é um sistema simples e moderno para facilitar a gestão de livros e empréstimos em sua instituição.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 BibliotekCrud. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
